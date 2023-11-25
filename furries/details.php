@@ -6,7 +6,7 @@
     require_once '../includes/db_connect.php';
     require_once '../includes/navbar.php';
 
-    if(!isset($_SESSION["user"]) || !isset($_SESSION["adm"])){
+    if(!isset($_SESSION["user"]) && !isset($_SESSION["adm"])){
         header("Location: ".ROOT."/home.php");
     }
 
