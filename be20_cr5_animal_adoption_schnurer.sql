@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2023 at 01:13 PM
+-- Generation Time: Nov 25, 2023 at 01:21 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -99,7 +99,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `pass`, `status`, `first_name`, `last_name`, `phone_number`, `address`, `picture`) VALUES
-(1, 'admin@admin.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'user', 'Very', 'Important', '0676123456', 'City Street', 'avatar.png'),
+(1, 'admin@admin.com', 'ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f', 'adm', 'Very', 'Important', '0676123456', 'City Street', 'avatar.png'),
 (2, 'furry@furry.com', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', 'user', 'Furry', 'Furrington', '0676123456', 'City Street2', 'avatar.png');
 
 --
