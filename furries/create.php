@@ -37,7 +37,8 @@
         }elseif(strlen($name) < 3){
             $error = true;
             $nameError = "Name must have at least 3 characters.";
-        }elseif(!preg_match("/^[a-zA-Z\s]+\d+$/", $name)){
+        // }elseif(!preg_match("/^[a-zA-Z\s]+\d+$/", $name)){
+        }elseif(!preg_match("/^[a-zA-Z0-9\s]+$/", $name)){
             $error = true;
             $nameError = "Name must contain only letters, numbers and spaces.";
         }
@@ -104,11 +105,6 @@
 
             $sql = "INSERT INTO `animals`(`status`, `vaccinated`, `name`, `address`, `size`, `age`, `breed`, `description`, `picture`) 
                                 VALUES ('Available','$vaccinated','$name','$address',$size,$age,'$breed','$description','$picture[0]')";
-
-// check and die
-            echo $sql;
-            exit();
-
 
             if(mysqli_query($connect, $sql)){
                 echo "
