@@ -99,6 +99,7 @@
         }
 
         if($error === false){
+            // below version would be a more secure password using BCRYPT
             // $password = password_hash ($password, PASSWORD_DEFAULT);
             $password = hash("sha256", $password);
 

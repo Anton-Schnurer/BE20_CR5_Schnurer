@@ -5,6 +5,8 @@
     require_once './includes/db_connect.php';
     require_once './includes/navbar.php';
 
+    // control access by quering the session variable
+    
     if(!isset($_SESSION["user"]) && !isset($_SESSION["adm"])){
         header("Location: ".ROOT."/index.php");
         die();

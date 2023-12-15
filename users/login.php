@@ -4,6 +4,8 @@
     require_once '../includes/db_connect.php';
     require_once '../includes/clean.php';
 
+    // access control if already logged in
+
     if(isset($_SESSION["user"]) || isset($_SESSION["adm"])){
         header("Location: ".ROOT."/home.php");
     }
@@ -30,6 +32,9 @@
         }
 
         if(!$error){
+            //
+            // using password_hash would be more secure and would require password_verify to be tested against the current hash saved in the database
+            //
             $password = hash("sha256", $password);
 
 
@@ -40,6 +45,9 @@
             if(mysqli_num_rows($result) === 1){
                 $row = mysqli_fetch_assoc($result);
                 if($row["status"] === "user"){
+                    //
+                    // create more entries to the SESSION to access the info in the navbars later
+                    //
                     $_SESSION["user"] = $row["id"];
                     $_SESSION["picture"] = $row["picture"];
                     $user_name = $row["first_name"]. " ". $row["last_name"];

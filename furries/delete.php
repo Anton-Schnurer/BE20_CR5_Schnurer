@@ -25,7 +25,7 @@
         $sql = "DELETE FROM `animals` WHERE `id` = $id";
         mysqli_query($connect, $sql);
 
-        // delete possible records in pet_adoption
+        // delete possible records in pivot table pet_adoption
 
         $sql = "SELECT * FROM `pet_adoption` WHERE `fk_animalid` = $id";
         $result = mysqli_query($connect, $sql);

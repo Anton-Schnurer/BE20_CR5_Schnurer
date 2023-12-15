@@ -20,8 +20,8 @@ if(isset($_GET["id"]) && !empty($_GET["id"]) && isset($_SESSION["user"])) {
 
     if (mysqli_num_rows($result) > 0){
         // 
-        // $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        // we do not use anything of the row
+        // fill out the pivot table pet_adoption for the many2many relationship in the db
+        // 
         //
         $sql_update = "UPDATE `animals` SET status='Adopted' WHERE id=$id";
         $sql_insert = "INSERT INTO `pet_adoption` (`adoption_date`, `fk_userid`, `fk_animalid`) VALUES ('$date',$user,$id)";

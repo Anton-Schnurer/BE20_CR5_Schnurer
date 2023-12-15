@@ -58,6 +58,9 @@
 
 
         if($error === false){
+           //
+            // using password_hash would be more secure and would require password_verify to be tested against the current hash saved in the database
+            //
             $password = hash("sha256", $password);
 
             $sql = "UPDATE `users` SET `email`='$email',`pass`='$password' WHERE id = $id";

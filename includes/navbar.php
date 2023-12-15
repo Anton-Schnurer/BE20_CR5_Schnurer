@@ -39,6 +39,9 @@
                         <a class='nav-link' href='".ROOT."/users/login.php'>Login</a>
                     </li>";
                     }
+
+                    // admin specific entries in navbar
+
                     if(isset($_SESSION["adm"])){
                         echo "
                         <li class='nav-item'>
